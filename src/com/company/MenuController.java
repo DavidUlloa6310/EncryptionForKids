@@ -16,4 +16,14 @@ public class MenuController {
 
     @FXML
     private Button puzzleButton;
+
+    public void playEncryption() {
+        SceneLibrary.playEncryption();
+    }
+
+    public void playDecryption() {
+        SceneLibrary.playDecryption();
+    }
+
+
 }
