@@ -41,6 +41,9 @@ public class EncryptController {
 
     private PaintingArray paintingArray;
 
+    private boolean hasClickedShowKeys = false;
+    private boolean hasEncrypted = false;
+
     @FXML
     private void initialize() {
         paintingArray = new PaintingArray();
@@ -113,6 +116,12 @@ public class EncryptController {
     public void showKeys() {
 
         if (showKeysButton.isSelected()) {
+
+            if (!hasClickedShowKeys) {
+                hasClickedShowKeys = true;
+                JOP.msg("Each color has a unique code! Try the different colors to see their codes.");
+            }
+
             Paint prevColor = gc.getFill();
 
             gc.setFill(Color.BLACK);
@@ -159,6 +168,16 @@ public class EncryptController {
         }
 
         gc.setFill(prevPaint);
+    }
+
+    public void encryptPainting() {
+        if (!hasEncrypted) {
+            hasEncrypted = true;
+            JOP.msg("With each square have a coding, all the codes are put together to make a special encryption (or secret message)!" +
+                    "\n" + "Only those that know the pattern and codes can turn this secret message back into the painting");
+        }
+
+        JOP.msg("The secret message (or encryption) for your painting is: \n\n" + paintingArray.encrypt());
     }
 
     public void redClick() {

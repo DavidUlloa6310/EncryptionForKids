@@ -9,8 +9,8 @@ public class Main extends Application {
 
     public final static int TILE_SIZE = 25;
 
-    private static int HEIGHT_TILES = 15;
-    private static int WIDTH_TILES = 20;
+    private static int HEIGHT_TILES = 10;
+    private static int WIDTH_TILES = 15;
 
     @Override
     public void start(Stage primaryStage) throws Exception {

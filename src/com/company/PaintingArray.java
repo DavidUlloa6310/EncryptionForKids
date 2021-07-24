@@ -25,7 +25,15 @@ public class PaintingArray {
     }
 
     public String encrypt() {
-        return "";
+        StringBuilder encryption = new StringBuilder();
+        for (int r = 0; r < Main.getHEIGHT_TILES(); r++) {
+            for (int c = 0; c < Main.getWIDTH_TILES(); c++) {
+                encryption.append(array[r][c]);
+                encryption.append(" ");
+            }
+            encryption.append("\n");
+        }
+        return encryption.toString();
     }
 
     public String[][] getArray() {
