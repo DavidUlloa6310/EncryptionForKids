@@ -9,6 +9,9 @@ public class Main extends Application {
 
     public final static int TILE_SIZE = 25;
 
+    private static int HEIGHT_TILES = 15;
+    private static int WIDTH_TILES = 20;
+
     @Override
     public void start(Stage primaryStage) throws Exception {
 
@@ -28,6 +31,14 @@ public class Main extends Application {
 
     public static int getTileSize() {
         return TILE_SIZE;
+    }
+
+    public static int getHEIGHT_TILES() {
+        return HEIGHT_TILES;
+    }
+
+    public static int getWIDTH_TILES() {
+        return WIDTH_TILES;
     }
 
     public static void main(String[] args) {

@@ -34,29 +34,16 @@ public class EncryptController {
 
     private GraphicsContext gc;
 
-    private double WIDTH_PIXELS;
-    private double HEIGHT_PIXELS;
-
-    private int HEIGHT_TILES;
-    private int WIDTH_TILES;
-
-
 
     @FXML
     private void initialize() {
         gc = canvas.getGraphicsContext2D();
 
-        WIDTH_PIXELS = JOP.getWidth();
-        HEIGHT_PIXELS = JOP.getHeight();
-
-        HEIGHT_TILES =  (int) HEIGHT_PIXELS/ Main.getTileSize();
-        WIDTH_TILES = (int) WIDTH_PIXELS / Main.getTileSize();
-
-        canvas.setHeight(HEIGHT_PIXELS);
-        canvas.setWidth(WIDTH_PIXELS);
+        canvas.setHeight(Main.getHEIGHT_TILES() * 25);
+        canvas.setWidth(Main.getWIDTH_TILES() * 25);
 
         gc.setFill(Color.WHITE);
-        gc.fillRect(0, 0, WIDTH_PIXELS, HEIGHT_PIXELS);
+        gc.fillRect(0, 0, Main.getWIDTH_TILES() * 25, Main.getHEIGHT_TILES() * 25);
 
         gc.setFill(Color.RED);
 
@@ -80,13 +67,17 @@ public class EncryptController {
         int xBox = (int) pixelX / Main.getTileSize();
         int yBox = (int) pixelY / Main.getTileSize();
 
-        if (xBox > WIDTH_TILES - 1 || xBox < 0 || yBox < 0 || yBox > HEIGHT_TILES - 1)
+        if (xBox > Main.getWIDTH_TILES() - 1 || xBox < 0 || yBox < 0 || yBox > Main.getHEIGHT_TILES() - 1)
             return;
 
         int xPixel = xBox * 25;
         int yPixel = yBox * 25;
 
         gc.fillRect(xPixel, yPixel, Main.getTileSize(), Main.getTileSize());
+    }
+
+    public void onMouseDragged(MouseEvent e) {
+        onMouseLeftClick(e.getX(), e.getY());
     }
 
     public void redClick() {
