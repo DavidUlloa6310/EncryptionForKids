@@ -18,6 +18,19 @@
                   <Region HBox.hgrow="ALWAYS" />
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
+                        <Image url="@../../../images/white_tile.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <RadioButton fx:id="whiteButton" mnemonicParsing="false" onAction="#whiteClick" text="White">
+                     <HBox.margin>
+                        <Insets bottom="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </RadioButton>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
                         <Image url="@../../../images/red_tile.png" />
                      </image>
                      <HBox.margin>
@@ -68,27 +81,25 @@
                         <Insets bottom="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </RadioButton>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../images/white_tile.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <RadioButton fx:id="whiteButton" mnemonicParsing="false" onAction="#whiteClick" text="White">
-                     <HBox.margin>
-                        <Insets bottom="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </RadioButton>
                   <Region HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
             <HBox>
                <children>
                   <Region HBox.hgrow="ALWAYS" />
-                  <Button mnemonicParsing="false" text="Button" />
-                  <Button mnemonicParsing="false" text="Button" />
+                  <CheckBox fx:id="showKeysButton" mnemonicParsing="false" onAction="#showKeys" text="Show Keys">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="12.0" />
+                     </HBox.margin>
+                  </CheckBox>
+                  <Button mnemonicParsing="false" text="Button">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin></Button>
+                  <Button mnemonicParsing="false" text="Button">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin></Button>
                   <Region HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
