@@ -1,12 +1,15 @@
 package com.company;
 
-import com.company.Main;
-
 public class PaintingArray {
     private String[][] array;
 
     public PaintingArray() {
         resetArray();
+    }
+
+    public PaintingArray(String array) {
+        resetArray();
+        processArray(array);
     }
 
     public void resetArray() {
@@ -34,6 +37,22 @@ public class PaintingArray {
             encryption.append("\n");
         }
         return encryption.toString();
+    }
+
+    public void processArray(String array) {
+        String[][] bigArray =  new String[array.split("\n").length][array.split("\n")[0].split(" ").length];
+        int r = 0;
+        for (String line : array.split("\n")) {
+            int c = 0;
+            for (String num : line.split(" ")) {
+                bigArray[r][c] = num;
+                c++;
+            }
+            r++;
+        }
+
+        this.array = bigArray;
+
     }
 
     public String[][] getArray() {

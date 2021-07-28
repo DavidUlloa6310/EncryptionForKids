@@ -3,10 +3,7 @@ package com.company;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.Toggle;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
@@ -34,6 +31,9 @@ public class EncryptController {
 
     @FXML
     private CheckBox showKeysButton;
+
+    @FXML
+    private TextArea textArea;
 
     final ToggleGroup group = new ToggleGroup();
 
@@ -177,7 +177,7 @@ public class EncryptController {
                     "\n" + "Only those that know the pattern and codes can turn this secret message back into the painting");
         }
 
-        JOP.msg("The secret message (or encryption) for your painting is: \n\n" + paintingArray.encrypt());
+        textArea.setText("The secret message (or encryption) for your painting is: \n\n" + paintingArray.encrypt());
     }
 
     public void redClick() {

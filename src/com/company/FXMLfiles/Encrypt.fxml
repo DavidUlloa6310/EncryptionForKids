@@ -8,7 +8,14 @@
 
 <BorderPane minHeight="270.0" minWidth="523.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.EncryptController">
    <center>
-      <Canvas fx:id="canvas" height="200.0" onMouseClicked="#clickCanvas" onMouseDragged="#onMouseDragged" width="200.0" BorderPane.alignment="CENTER" />
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <Region HBox.hgrow="ALWAYS" />
+            <Canvas fx:id="canvas" height="200.0" onMouseClicked="#clickCanvas" onMouseDragged="#onMouseDragged" width="200.0" HBox.hgrow="ALWAYS" />
+            <TextArea fx:id="textArea" HBox.hgrow="ALWAYS" />
+            <Region HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
    </center>
    <bottom>
       <VBox BorderPane.alignment="CENTER">
