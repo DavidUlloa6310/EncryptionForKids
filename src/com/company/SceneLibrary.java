@@ -7,10 +7,10 @@ import javafx.stage.Stage;
 public class SceneLibrary {
     public static Stage primaryStage;
 
-    private static Parent menuRoot;
-    private static Parent encryptionRoot;
-    private static Parent decryptionRoot;
-    private static Parent puzzleRoot;
+    private static Scene menuScene;
+    private static Scene encryptionScene;
+    private static Scene decryptionScene;
+    private static Scene puzzleScene;
 
     public static void setPrimaryStage(Stage primaryStage) {
         SceneLibrary.primaryStage = primaryStage;
@@ -21,35 +21,35 @@ public class SceneLibrary {
     }
 
     public static void setMenuRoot(Parent root) {
-        menuRoot = root;
+        menuScene = new Scene(root);
     }
 
     public static void setEncryptionRoot(Parent root) {
-        encryptionRoot = root;
+        encryptionScene = new Scene(root);
     }
 
     public static void setDecryptionRoot(Parent root) {
-        decryptionRoot = root;
+        decryptionScene = new Scene(root);
     }
 
     public static void setPuzzleRoot(Parent root) {
-        puzzleRoot = root;
+        puzzleScene = new Scene(root);
     }
 
     public static void playMenu() {
-        primaryStage.setScene(new Scene(menuRoot));
+        primaryStage.setScene(menuScene);
     }
 
     public static void playEncryption() {
-        primaryStage.setScene(new Scene(encryptionRoot));
+        primaryStage.setScene(encryptionScene);
     }
 
     public static void playDecryption() {
-        primaryStage.setScene(new Scene(decryptionRoot));
+        primaryStage.setScene(decryptionScene);
     }
 
     public static void playPuzzle() {
-        primaryStage.setScene(new Scene(puzzleRoot));
+        primaryStage.setScene(puzzleScene);
     }
 
 

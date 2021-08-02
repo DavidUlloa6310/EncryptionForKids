@@ -87,4 +87,8 @@ public class DecryptionController {
         gc.fillRect(c * 25, r * 25, 25, 25);
     }
 
+    public void toMenu() {
+        SceneLibrary.playMenu();
+    }
+
 }

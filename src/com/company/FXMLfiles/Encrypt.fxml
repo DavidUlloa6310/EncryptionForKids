@@ -109,4 +109,15 @@
          </children>
       </VBox>
    </bottom>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false">
+               <graphic>
+                  <Button mnemonicParsing="false" onAction="#toMenu" text="Back" />
+               </graphic>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
 </BorderPane>

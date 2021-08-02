@@ -200,4 +200,8 @@ public class EncryptController {
         gc.setFill(Color.WHITE);
     }
 
+    public void toMenu() {
+        SceneLibrary.playMenu();
+    }
+
 }
