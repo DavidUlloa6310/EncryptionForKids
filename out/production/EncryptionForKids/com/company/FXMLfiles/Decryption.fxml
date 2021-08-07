@@ -5,7 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane minHeight="270.0" minWidth="523.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.DecryptionController">
+<BorderPane minHeight="270.0" minWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.DecryptionController">
    <bottom>
       <HBox BorderPane.alignment="CENTER">
          <children>
@@ -27,4 +27,15 @@
          </children>
       </HBox>
    </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false">
+               <graphic>
+                  <Button mnemonicParsing="false" onAction="#toMenu" text="Back" />
+               </graphic>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
 </BorderPane>

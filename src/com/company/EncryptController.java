@@ -1,11 +1,15 @@
 package com.company;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
@@ -30,10 +34,28 @@ public class EncryptController {
     private RadioButton whiteButton;
 
     @FXML
+    private RadioButton brownButton;
+
+    @FXML
+    private RadioButton blackButton;
+
+    @FXML
+    private RadioButton indigoButton;
+
+    @FXML
     private CheckBox showKeysButton;
 
     @FXML
     private TextArea textArea;
+
+    @FXML
+    private VBox vBox;
+
+    @FXML
+    private HBox extraColors;
+
+    @FXML
+    private ChoiceBox binarySelector;
 
     final ToggleGroup group = new ToggleGroup();
 
@@ -63,8 +85,20 @@ public class EncryptController {
         greenButton.setToggleGroup(group);
         yellowButton.setToggleGroup(group);
         whiteButton.setToggleGroup(group);
+        blackButton.setToggleGroup(group);
+        indigoButton.setToggleGroup(group);
+        brownButton.setToggleGroup(group);
 
         redButton.setSelected(true);
+
+        ObservableList<String> options = FXCollections.observableArrayList("2^2","2^3");
+        binarySelector.setValue("2^2");
+        binarySelector.setItems(options);
+
+        vBox.getChildren().remove(extraColors);
+
+        binarySelector.setOnAction(event -> changeBinary());
+
 
     }
 
@@ -180,6 +214,19 @@ public class EncryptController {
         textArea.setText("The secret message (or encryption) for your painting is: \n\n" + paintingArray.encrypt());
     }
 
+    public void changeBinary() {
+        if (binarySelector.getValue().equals("2^2")) {
+            if (vBox.getChildren().contains(extraColors)) {
+                vBox.getChildren().remove(extraColors);
+                gc.setFill(Color.WHITE);
+                paintingArray = new PaintingArray();
+                paintCanvas();
+            }
+        } else if (!vBox.getChildren().contains(extraColors)) {
+                vBox.getChildren().add(1, extraColors);
+                }
+    }
+
     public void redClick() {
         gc.setFill(Color.RED);
     }
@@ -198,6 +245,18 @@ public class EncryptController {
 
     public void whiteClick() {
         gc.setFill(Color.WHITE);
+    }
+
+    public void blackClick() {
+        gc.setFill(Color.BLACK);
+    }
+
+    public void brownClick() {
+        gc.setFill(Color.BROWN);
+    }
+
+    public void indigoClick() {
+        gc.setFill(Color.INDIGO);
     }
 
     public void toMenu() {

@@ -18,7 +18,7 @@
       </HBox>
    </center>
    <bottom>
-      <VBox BorderPane.alignment="CENTER">
+      <VBox fx:id="vBox" BorderPane.alignment="CENTER">
          <children>
             <HBox>
                <children>
@@ -75,6 +75,12 @@
                         <Insets bottom="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </RadioButton>
+                  <Region HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox fx:id="extraColors">
+               <children>
+                  <Region prefWidth="200.0" HBox.hgrow="ALWAYS" />
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/yellow_tile.png" />
@@ -88,7 +94,46 @@
                         <Insets bottom="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </RadioButton>
-                  <Region HBox.hgrow="ALWAYS" />
+                  <ImageView fitHeight="150.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/brown_tile.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <RadioButton fx:id="brownButton" mnemonicParsing="false" onAction="#brownClick" text="Brown">
+                     <HBox.margin>
+                        <Insets bottom="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </RadioButton>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/black_tile.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <RadioButton fx:id="blackButton" mnemonicParsing="false" onAction="#blackClick" text="Black">
+                     <HBox.margin>
+                        <Insets bottom="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </RadioButton>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/indigo_tile.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <RadioButton fx:id="indigoButton" mnemonicParsing="false" onAction="#indigoClick" text="Indigo">
+                     <HBox.margin>
+                        <Insets bottom="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </RadioButton>
+                  <Region prefWidth="200.0" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
             <HBox>
@@ -99,6 +144,10 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="12.0" />
                      </HBox.margin>
                   </CheckBox>
+                  <ChoiceBox fx:id="binarySelector" onMouseReleased="#changeBinary" prefHeight="25.0" prefWidth="76.0">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin></ChoiceBox>
                   <Button mnemonicParsing="false" onAction="#encryptPainting" text="Encrypt!">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -109,4 +158,15 @@
          </children>
       </VBox>
    </bottom>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false">
+               <graphic>
+                  <Button mnemonicParsing="false" onAction="#toMenu" text="Back" />
+               </graphic>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
 </BorderPane>
