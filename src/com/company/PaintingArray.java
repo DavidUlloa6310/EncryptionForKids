@@ -27,11 +27,28 @@ public class PaintingArray {
         array[r][c] = value;
     }
 
-    public String encrypt() {
+    public String encrypt(boolean is2by2) {
         StringBuilder encryption = new StringBuilder();
-        for (int r = 0; r < Main.getHEIGHT_TILES(); r++) {
-            for (int c = 0; c < Main.getWIDTH_TILES(); c++) {
-                encryption.append(array[r][c]);
+
+        for (int r = 0; r < Main.getHEIGHT_TILES(); r += 2) {
+            for (int c = 0; c < Main.getWIDTH_TILES(); c += 2) {
+                if (is2by2) {
+                    encryption.append(array[r][c].substring(1));
+//                    encryption.append(" ");
+                    encryption.append(array[r][c + 1].substring(1));
+//                    encryption.append(" ");
+                    encryption.append(array[r + 1][c + 1].substring(1));
+//                    encryption.append(" ");
+                    encryption.append(array[r + 1][c].substring(1));
+                } else {
+                    encryption.append(array[r][c]);
+//                    encryption.append(" ");
+                    encryption.append(array[r][c + 1]);
+//                    encryption.append(" ");
+                    encryption.append(array[r + 1][c + 1]);
+//                    encryption.append(" ");
+                    encryption.append(array[r + 1][c]);
+                }
                 encryption.append(" ");
             }
             encryption.append("\n");

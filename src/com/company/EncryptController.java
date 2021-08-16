@@ -130,14 +130,30 @@ public class EncryptController {
             paintingArray.fillSquare(yBox, xBox, "010");
         } else if (Color.YELLOW.equals(gc.getFill())) {
             paintingArray.fillSquare(yBox, xBox, "100");
+        } else if (Color.BLACK.equals(gc.getFill())) {
+            paintingArray.fillSquare(yBox, xBox, "111");
+        } else if (Color.BROWN.equals(gc.getFill())) {
+            paintingArray.fillSquare(yBox, xBox, "110");
+        } else if (Color.INDIGO.equals(gc.getFill())) {
+            paintingArray.fillSquare(yBox, xBox, "101");
         }
 
         Paint prevColor = gc.getFill();
 
-        gc.setFill(Color.BLACK);
+        if (prevColor.equals(Color.BLACK)) {
+            gc.setFill(Color.WHITE);
+        } else {
+            gc.setFill(Color.BLACK);
+        }
 
         if (showKeysButton.isSelected()) {
-            gc.fillText(paintingArray.getArray()[yBox][xBox], xBox * Main.getTileSize(), yBox * Main.getTileSize() + Main.getTileSize(), Main.getTileSize());
+            String number;
+            if (binarySelector.getValue().equals("2^2")) {
+                number = paintingArray.getArray()[yBox][xBox].substring(1);
+            } else {
+                number = paintingArray.getArray()[yBox][xBox];
+            }
+            gc.fillText(number, xBox * Main.getTileSize(), yBox * Main.getTileSize() + Main.getTileSize(), Main.getTileSize());
         }
 
         gc.setFill(prevColor);
@@ -162,7 +178,13 @@ public class EncryptController {
 
             for (int r = 0; r < Main.getHEIGHT_TILES(); r++) {
                 for (int c = 0; c < Main.getWIDTH_TILES(); c++) {
-                    gc.fillText(paintingArray.getArray()[r][c], c * Main.getTileSize(), r * Main.getTileSize() + Main.getTileSize(), Main.getTileSize());
+                    String number;
+                    if (binarySelector.getValue().equals("2^2")) {
+                        number = paintingArray.getArray()[r][c].substring(1);
+                    } else {
+                        number = paintingArray.getArray()[r][c];
+                    }
+                    gc.fillText(number, c * Main.getTileSize(), r * Main.getTileSize() + Main.getTileSize(), Main.getTileSize());
                 }
             }
 
@@ -192,9 +214,6 @@ public class EncryptController {
                     case "011":
                         gc.setFill(Color.GREEN);
                         break;
-                    case "100":
-                        gc.setFill(Color.YELLOW);
-                        break;
                 }
 
                 gc.fillRect(c * Main.getTileSize(), r * Main.getTileSize(), Main.getTileSize(), Main.getTileSize());
@@ -211,7 +230,7 @@ public class EncryptController {
                     "\n" + "Only those that know the pattern and codes can turn this secret message back into the painting");
         }
 
-        textArea.setText("The secret message (or encryption) for your painting is: \n\n" + paintingArray.encrypt());
+        textArea.setText("The secret message (or encryption) for your painting is: \n\n" + paintingArray.encrypt(binarySelector.getValue().equals("2^2")));
     }
 
     public void changeBinary() {

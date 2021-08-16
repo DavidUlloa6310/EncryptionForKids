@@ -55,29 +55,58 @@ public class DecryptionController {
         gc.fillRect(0, 0, Main.getWIDTH_TILES() * Main.getTileSize(), Main.getHEIGHT_TILES() * Main.getTileSize());
 
         String[] lines = textArea.getText().split("\\r?\\n");
+
+        int squareRow = 0;
+        int squareCol = 0;
+
         for (int r = 0; r < lines.length; r++) {
             String line = lines[r];
             String[] nums = line.split(" ");
+
             for (int c = 0; c < nums.length; c++) {
                 String num = nums[c];
-                paintCanvasPoint(num, r, c);
+                paintSquare(num, squareRow, squareCol);
+                squareCol += 2;
             }
+
+            squareCol = 0;
+            squareRow += 2;
+        }
+    }
+
+    public void paintSquare(String num, int startRow, int startCol) {
+        try {
+            paintCanvasPoint(num.substring(0, 3), startRow, startCol);
+            paintCanvasPoint(num.substring(3, 6), startRow, startCol + 1);
+            paintCanvasPoint(num.substring(6, 9), startRow + 1, startCol + 1);
+            paintCanvasPoint(num.substring(9), startRow + 1,  startCol);
+        } catch (Exception ignored){
+
         }
     }
 
     public void paintCanvasPoint(String num, int r, int c) {
         switch (num) {
-            case "001":
+            case "001": case "01":
                 gc.setFill(Color.RED);
                 break;
-            case "010":
+            case "010": case "10":
                 gc.setFill(Color.BLUE);
                 break;
-            case "011":
+            case "011": case "11":
                 gc.setFill(Color.GREEN);
                 break;
             case "100":
                 gc.setFill(Color.YELLOW);
+                break;
+            case "101":
+                gc.setFill(Color.INDIGO);
+                break;
+            case "110":
+                gc.setFill(Color.BROWN);
+                break;
+            case "111":
+                gc.setFill(Color.BLACK);
                 break;
             default:
                 gc.setFill(Color.WHITE);
