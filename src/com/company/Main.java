@@ -18,17 +18,19 @@ public class Main extends Application {
         Parent menuRoot = FXMLLoader.load(getClass().getResource("FXMLfiles/Menu.fxml"));
         Parent encryptionRoot = FXMLLoader.load(getClass().getResource("FXMLfiles/Encrypt.fxml"));
         Parent decryptionRoot = FXMLLoader.load(getClass().getResource("FXMLfiles/Decryption.fxml"));
+        Parent colorSelection = FXMLLoader.load(getClass().getResource("FXMLfiles/ColorSelector.fxml"));
 
         SceneLibrary.setPrimaryStage(primaryStage);
 
         SceneLibrary.setMenuRoot(menuRoot);
         SceneLibrary.setEncryptionRoot(encryptionRoot);
         SceneLibrary.setDecryptionRoot(decryptionRoot);
+        SceneLibrary.setColorSelectorScene(colorSelection);
 
         SceneLibrary.playMenu();
         primaryStage.setHeight(500);
         primaryStage.setWidth(900);
-        primaryStage.setResizable(false);
+        primaryStage.setResizable(true);
         primaryStage.show();
     }
 

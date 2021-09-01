@@ -10,6 +10,7 @@ public class SceneLibrary {
     private static Scene menuScene;
     private static Scene encryptionScene;
     private static Scene decryptionScene;
+    private static Scene colorSelectorScene;
     private static Scene puzzleScene;
 
     public static void setPrimaryStage(Stage primaryStage) {
@@ -32,6 +33,10 @@ public class SceneLibrary {
         decryptionScene = new Scene(root);
     }
 
+    public static void setColorSelectorScene(Parent root) {
+        colorSelectorScene = new Scene(root);
+    }
+
     public static void setPuzzleRoot(Parent root) {
         puzzleScene = new Scene(root);
     }
@@ -46,6 +51,10 @@ public class SceneLibrary {
 
     public static void playDecryption() {
         primaryStage.setScene(decryptionScene);
+    }
+
+    public static void playColorSelectorScene() {
+        primaryStage.setScene(colorSelectorScene);
     }
 
     public static void playPuzzle() {

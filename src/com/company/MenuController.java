@@ -25,5 +25,9 @@ public class MenuController {
         SceneLibrary.playDecryption();
     }
 
+    public void playColorSelector() {
+        SceneLibrary.playColorSelectorScene();
+    }
+
 
 }

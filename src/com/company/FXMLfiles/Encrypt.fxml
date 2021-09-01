@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.canvas.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane minHeight="270.0" minWidth="523.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.EncryptController">
+<BorderPane minHeight="270.0" minWidth="523.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.EncryptController">
    <center>
       <HBox BorderPane.alignment="CENTER">
          <children>
@@ -23,54 +31,22 @@
             <HBox>
                <children>
                   <Region HBox.hgrow="ALWAYS" />
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../images/white_tile.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <RadioButton fx:id="whiteButton" mnemonicParsing="false" onAction="#whiteClick" text="White">
+                  <RadioButton fx:id="whiteButton" mnemonicParsing="false" onAction="#colorOneClick" text="Color 1">
                      <HBox.margin>
                         <Insets bottom="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </RadioButton>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../images/red_tile.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <RadioButton fx:id="redButton" mnemonicParsing="false" onAction="#redClick" text="Red">
+                  <RadioButton fx:id="redButton" mnemonicParsing="false" onAction="#colorTwoClick" text="Color 2">
                      <HBox.margin>
                         <Insets bottom="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </RadioButton>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../images/blue_tile.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <RadioButton fx:id="blueButton" mnemonicParsing="false" onAction="#blueClick" text="Blue">
+                  <RadioButton fx:id="blueButton" mnemonicParsing="false" onAction="#colorThreeClick" text="Color 3">
                      <HBox.margin>
                         <Insets bottom="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </RadioButton>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../images/green_tile.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <RadioButton fx:id="greenButton" mnemonicParsing="false" onAction="#greenClick" text="Green">
+                  <RadioButton fx:id="greenButton" mnemonicParsing="false" onAction="#colorFourClick" text="Color 4">
                      <HBox.margin>
                         <Insets bottom="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
@@ -81,54 +57,22 @@
             <HBox fx:id="extraColors">
                <children>
                   <Region prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../images/yellow_tile.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <RadioButton fx:id="yellowButton" mnemonicParsing="false" onAction="#yellowClick" text="Yellow">
+                  <RadioButton fx:id="yellowButton" mnemonicParsing="false" onAction="#colorFiveClick" text="Color 5">
                      <HBox.margin>
                         <Insets bottom="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </RadioButton>
-                  <ImageView fitHeight="150.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../images/brown_tile.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <RadioButton fx:id="brownButton" mnemonicParsing="false" onAction="#brownClick" text="Brown">
+                  <RadioButton fx:id="brownButton" mnemonicParsing="false" onAction="#colorSixClick" text="Color 6">
                      <HBox.margin>
                         <Insets bottom="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </RadioButton>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../images/black_tile.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <RadioButton fx:id="blackButton" mnemonicParsing="false" onAction="#blackClick" text="Black">
+                  <RadioButton fx:id="blackButton" mnemonicParsing="false" onAction="#colorSevenClick" text="Color 7">
                      <HBox.margin>
                         <Insets bottom="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </RadioButton>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../images/indigo_tile.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <RadioButton fx:id="indigoButton" mnemonicParsing="false" onAction="#indigoClick" text="Indigo">
+                  <RadioButton fx:id="indigoButton" mnemonicParsing="false" onAction="#colorEightClick" text="Color 8">
                      <HBox.margin>
                         <Insets bottom="10.0" right="10.0" top="10.0" />
                      </HBox.margin>

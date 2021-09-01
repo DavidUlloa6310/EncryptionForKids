@@ -99,7 +99,6 @@ public class EncryptController {
 
         binarySelector.setOnAction(event -> changeBinary());
 
-
     }
 
     public void clickCanvas(MouseEvent e) {
@@ -120,22 +119,22 @@ public class EncryptController {
 
         gc.fillRect(xPixel, yPixel, Main.getTileSize(), Main.getTileSize());
 
-        if (Color.RED.equals(gc.getFill())) {
-            paintingArray.fillSquare(yBox, xBox, "001");
-        } else if (Color.WHITE.equals(gc.getFill())) {
+        if (ColorChoices.getColorOne().equals(gc.getFill())) {
             paintingArray.fillSquare(yBox, xBox, "000");
-        } else if (Color.GREEN.equals(gc.getFill())) {
-            paintingArray.fillSquare(yBox, xBox, "011");
-        } else if (Color.BLUE.equals(gc.getFill())) {
+        } else if (ColorChoices.getColorTwo().equals(gc.getFill())) {
+            paintingArray.fillSquare(yBox, xBox, "001");
+        } else if (ColorChoices.getColorThree().equals(gc.getFill())) {
             paintingArray.fillSquare(yBox, xBox, "010");
-        } else if (Color.YELLOW.equals(gc.getFill())) {
+        } else if (ColorChoices.getColorFour().equals(gc.getFill())) {
+            paintingArray.fillSquare(yBox, xBox, "011");
+        } else if (ColorChoices.getColorFive().equals(gc.getFill())) {
             paintingArray.fillSquare(yBox, xBox, "100");
-        } else if (Color.BLACK.equals(gc.getFill())) {
-            paintingArray.fillSquare(yBox, xBox, "111");
-        } else if (Color.BROWN.equals(gc.getFill())) {
-            paintingArray.fillSquare(yBox, xBox, "110");
-        } else if (Color.INDIGO.equals(gc.getFill())) {
+        } else if (ColorChoices.getColorSix().equals(gc.getFill())) {
             paintingArray.fillSquare(yBox, xBox, "101");
+        } else if (ColorChoices.getColorSeven().equals(gc.getFill())) {
+            paintingArray.fillSquare(yBox, xBox, "110");
+        } else if (ColorChoices.getColorEight().equals(gc.getFill())) {
+            paintingArray.fillSquare(yBox, xBox, "111");
         }
 
         Paint prevColor = gc.getFill();
@@ -203,16 +202,16 @@ public class EncryptController {
                 String square = paintingArray.getArray()[r][c];
                 switch (square) {
                     case "000":
-                        gc.setFill(Color.WHITE);
+                        gc.setFill(ColorChoices.getColorOne());
                         break;
                     case "001":
-                        gc.setFill(Color.RED);
+                        gc.setFill(ColorChoices.getColorTwo());
                         break;
                     case "010":
-                        gc.setFill(Color.BLUE);
+                        gc.setFill(ColorChoices.getColorThree());
                         break;
                     case "011":
-                        gc.setFill(Color.GREEN);
+                        gc.setFill(ColorChoices.getColorFour());
                         break;
                 }
 
@@ -246,36 +245,36 @@ public class EncryptController {
                 }
     }
 
-    public void redClick() {
-        gc.setFill(Color.RED);
+    public void colorOneClick() {
+        gc.setFill(ColorChoices.getColorOne());
     }
 
-    public void blueClick() {
-        gc.setFill(Color.BLUE);
+    public void colorTwoClick() {
+        gc.setFill(ColorChoices.getColorTwo());
     }
 
-    public void yellowClick() {
-        gc.setFill(Color.YELLOW);
+    public void colorThreeClick() {
+        gc.setFill(ColorChoices.getColorThree());
     }
 
-    public void greenClick() {
-        gc.setFill(Color.GREEN);
+    public void colorFourClick() {
+        gc.setFill(ColorChoices.getColorFour());
     }
 
-    public void whiteClick() {
-        gc.setFill(Color.WHITE);
+    public void colorFiveClick() {
+        gc.setFill(ColorChoices.getColorFive());
     }
 
-    public void blackClick() {
-        gc.setFill(Color.BLACK);
+    public void colorSixClick() {
+        gc.setFill(ColorChoices.getColorSix());
     }
 
-    public void brownClick() {
-        gc.setFill(Color.BROWN);
+    public void colorSevenClick() {
+        gc.setFill(ColorChoices.getColorSeven());
     }
 
-    public void indigoClick() {
-        gc.setFill(Color.INDIGO);
+    public void colorEightClick() {
+        gc.setFill(ColorChoices.getColorEight());
     }
 
     public void toMenu() {
