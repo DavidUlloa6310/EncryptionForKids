@@ -67,17 +67,42 @@ public class ColorSelectorController {
 
         choiceBoxEight.setItems(colors);
         choiceBoxEight.setValue("Black");
-    }
 
-    public void updateColors() {
-        ColorChoices.setColorOne(ColorChoices.getColor((String) choiceBoxOne.getValue()));
-        ColorChoices.setColorTwo(ColorChoices.getColor((String) choiceBoxTwo.getValue()));
-        ColorChoices.setColorThree(ColorChoices.getColor((String) choiceBoxThree.getValue()));
-        ColorChoices.setColorFour(ColorChoices.getColor((String) choiceBoxFour.getValue()));
-        ColorChoices.setColorFive(ColorChoices.getColor((String) choiceBoxFive.getValue()));
-        ColorChoices.setColorSix(ColorChoices.getColor((String) choiceBoxSix.getValue()));
-        ColorChoices.setColorSeven(ColorChoices.getColor((String) choiceBoxSeven.getValue()));
-        ColorChoices.setColorEight(ColorChoices.getColor((String) choiceBoxEight.getValue()));
+
+        choiceBoxOne.setOnAction(e -> {
+            ColorChoices.setColorOne(ColorChoices.getColor((String) choiceBoxOne.getValue()));
+        });
+
+        choiceBoxTwo.setOnAction(e -> {
+            ColorChoices.setColorTwo(ColorChoices.getColor((String) choiceBoxTwo.getValue()));
+        });
+
+        choiceBoxThree.setOnAction(e -> {
+            ColorChoices.setColorThree(ColorChoices.getColor((String) choiceBoxThree.getValue()));
+        });
+
+        choiceBoxFour.setOnAction(e -> {
+            ColorChoices.setColorFour(ColorChoices.getColor((String) choiceBoxFour.getValue()));
+        });
+
+        choiceBoxFive.setOnAction(e -> {
+            ColorChoices.setColorFive(ColorChoices.getColor((String) choiceBoxFive.getValue()));
+        });
+
+        choiceBoxSix.setOnAction(e -> {
+            ColorChoices.setColorSix(ColorChoices.getColor((String) choiceBoxSix.getValue()));
+        });
+
+        choiceBoxSeven.setOnAction(e -> {
+            ColorChoices.setColorSeven(ColorChoices.getColor((String) choiceBoxSeven.getValue()));
+        });
+
+        choiceBoxEight.setOnAction(e -> {
+            ColorChoices.setColorEight(ColorChoices.getColor((String) choiceBoxEight.getValue()));
+        });
+
+
+
     }
 
     public void playEncryption() {
