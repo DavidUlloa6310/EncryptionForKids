@@ -19,28 +19,28 @@ public class EncryptController {
     private Canvas canvas;
 
     @FXML
-    private RadioButton redButton;
+    private RadioButton colorOneButton;
 
     @FXML
-    private RadioButton blueButton;
+    private RadioButton colorTwoButton;
 
     @FXML
-    private RadioButton greenButton;
+    private RadioButton colorThreeButton;
 
     @FXML
-    private RadioButton yellowButton;
+    private RadioButton colorFourButton;
 
     @FXML
-    private RadioButton whiteButton;
+    private RadioButton colorFiveButton;
 
     @FXML
-    private RadioButton brownButton;
+    private RadioButton colorSixButton;
 
     @FXML
-    private RadioButton blackButton;
+    private RadioButton colorSevenButton;
 
     @FXML
-    private RadioButton indigoButton;
+    private RadioButton colorEightButton;
 
     @FXML
     private CheckBox showKeysButton;
@@ -57,6 +57,18 @@ public class EncryptController {
     @FXML
     private ChoiceBox binarySelector;
 
+    @FXML
+    private ChoiceBox canvasSizeChoiceBox;
+
+    private Color colorOne = Color.WHITE;
+    private Color colorTwo = Color.RED;
+    private Color colorThree = Color.BLUE;
+    private Color colorFour = Color.GREEN;
+    private Color colorFive = Color.YELLOW;
+    private Color colorSix = Color.INDIGO;
+    private Color colorSeven = Color.BROWN;
+    private Color colorEight = Color.BLACK;
+
     final ToggleGroup group = new ToggleGroup();
 
     private GraphicsContext gc;
@@ -68,28 +80,25 @@ public class EncryptController {
 
     @FXML
     private void initialize() {
-        paintingArray = new PaintingArray();
 
         gc = canvas.getGraphicsContext2D();
 
         canvas.setHeight(Main.getHEIGHT_TILES() * Main.getTileSize());
         canvas.setWidth(Main.getWIDTH_TILES() * Main.getTileSize());
 
-        gc.setFill(Color.WHITE);
-        gc.fillRect(0, 0, Main.getWIDTH_TILES() * Main.getTileSize(), Main.getHEIGHT_TILES() * Main.getTileSize());
+        resetCanvas();
 
-        gc.setFill(Color.RED);
+        colorOneButton.setToggleGroup(group);
+        colorTwoButton.setToggleGroup(group);
+        colorThreeButton.setToggleGroup(group);
+        colorFourButton.setToggleGroup(group);
+        colorFiveButton.setToggleGroup(group);
+        colorSevenButton.setToggleGroup(group);
+        colorEightButton.setToggleGroup(group);
+        colorSixButton.setToggleGroup(group);
 
-        redButton.setToggleGroup(group);
-        blueButton.setToggleGroup(group);
-        greenButton.setToggleGroup(group);
-        yellowButton.setToggleGroup(group);
-        whiteButton.setToggleGroup(group);
-        blackButton.setToggleGroup(group);
-        indigoButton.setToggleGroup(group);
-        brownButton.setToggleGroup(group);
 
-        redButton.setSelected(true);
+        colorOneButton.setSelected(true);
 
         ObservableList<String> options = FXCollections.observableArrayList("2^2","2^3");
         binarySelector.setValue("2^2");
@@ -98,6 +107,28 @@ public class EncryptController {
         vBox.getChildren().remove(extraColors);
 
         binarySelector.setOnAction(event -> changeBinary());
+
+        canvasSizeChoiceBox.setItems(FXCollections.observableArrayList("8*8", "12*12", "16*16"));
+        canvasSizeChoiceBox.setValue("8*8");
+
+        canvasSizeChoiceBox.setOnAction(e -> {
+            switch ((String) canvasSizeChoiceBox.getValue()) {
+                case "8*8":
+                    Main.setHeightTiles(8);
+                    Main.setWidthTiles(8);
+                    break;
+                case "12*12":
+                    Main.setWidthTiles(12);
+                    Main.setHeightTiles(12);
+                    break;
+                case "16*16":
+                    Main.setWidthTiles(16);
+                    Main.setHeightTiles(16);
+                    break;
+            }
+
+            resetCanvas();
+        });
 
     }
 
@@ -119,21 +150,21 @@ public class EncryptController {
 
         gc.fillRect(xPixel, yPixel, Main.getTileSize(), Main.getTileSize());
 
-        if (ColorChoices.getColorOne().equals(gc.getFill())) {
+        if (colorOne.equals(gc.getFill())) {
             paintingArray.fillSquare(yBox, xBox, "000");
-        } else if (ColorChoices.getColorTwo().equals(gc.getFill())) {
+        } else if (colorTwo.equals(gc.getFill())) {
             paintingArray.fillSquare(yBox, xBox, "001");
-        } else if (ColorChoices.getColorThree().equals(gc.getFill())) {
+        } else if (colorThree.equals(gc.getFill())) {
             paintingArray.fillSquare(yBox, xBox, "010");
-        } else if (ColorChoices.getColorFour().equals(gc.getFill())) {
+        } else if (colorFour.equals(gc.getFill())) {
             paintingArray.fillSquare(yBox, xBox, "011");
-        } else if (ColorChoices.getColorFive().equals(gc.getFill())) {
+        } else if (colorFive.equals(gc.getFill())) {
             paintingArray.fillSquare(yBox, xBox, "100");
-        } else if (ColorChoices.getColorSix().equals(gc.getFill())) {
+        } else if (colorSix.equals(gc.getFill())) {
             paintingArray.fillSquare(yBox, xBox, "101");
-        } else if (ColorChoices.getColorSeven().equals(gc.getFill())) {
+        } else if (colorSeven.equals(gc.getFill())) {
             paintingArray.fillSquare(yBox, xBox, "110");
-        } else if (ColorChoices.getColorEight().equals(gc.getFill())) {
+        } else if (colorEight.equals(gc.getFill())) {
             paintingArray.fillSquare(yBox, xBox, "111");
         }
 
@@ -202,16 +233,16 @@ public class EncryptController {
                 String square = paintingArray.getArray()[r][c];
                 switch (square) {
                     case "000":
-                        gc.setFill(ColorChoices.getColorOne());
+                        gc.setFill(colorOne);
                         break;
                     case "001":
-                        gc.setFill(ColorChoices.getColorTwo());
+                        gc.setFill(colorTwo);
                         break;
                     case "010":
-                        gc.setFill(ColorChoices.getColorThree());
+                        gc.setFill(colorThree);
                         break;
                     case "011":
-                        gc.setFill(ColorChoices.getColorFour());
+                        gc.setFill(colorFour);
                         break;
                 }
 
@@ -245,40 +276,144 @@ public class EncryptController {
                 }
     }
 
+    public void resetCanvas() {
+        paintingArray = new PaintingArray();
+        gc.setFill(colorOne);
+        canvas.setWidth(Main.getTileSize() * Main.getWIDTH_TILES());
+        canvas.setHeight(Main.getTileSize() * Main.getHEIGHT_TILES());
+        gc.fillRect(0, 0, Main.getWIDTH_TILES() * Main.getTileSize(), Main.getHEIGHT_TILES() * Main.getTileSize());
+
+    }
+
     public void colorOneClick() {
-        gc.setFill(ColorChoices.getColorOne());
+        gc.setFill(colorOne);
     }
 
     public void colorTwoClick() {
-        gc.setFill(ColorChoices.getColorTwo());
+        gc.setFill(colorTwo);
     }
 
     public void colorThreeClick() {
-        gc.setFill(ColorChoices.getColorThree());
+        gc.setFill(colorThree);
     }
 
     public void colorFourClick() {
-        gc.setFill(ColorChoices.getColorFour());
+        gc.setFill(colorFour);
     }
 
     public void colorFiveClick() {
-        gc.setFill(ColorChoices.getColorFive());
+        gc.setFill(colorFive);
     }
 
     public void colorSixClick() {
-        gc.setFill(ColorChoices.getColorSix());
+        gc.setFill(colorSix);
     }
 
     public void colorSevenClick() {
-        gc.setFill(ColorChoices.getColorSeven());
+        gc.setFill(colorSeven);
     }
 
     public void colorEightClick() {
-        gc.setFill(ColorChoices.getColorEight());
+        gc.setFill(colorEight);
     }
 
     public void toMenu() {
         SceneLibrary.playMenu();
     }
 
+    public void changeRadioButtonOneName(String name) {
+        colorOneButton.setText(name);
+    }
+
+    public void changeRadioButtonTwoName(String name) {
+        colorTwoButton.setText(name);
+    }
+
+    public void changeRadioButtonThreeName(String name) {
+        colorThreeButton.setText(name);
+    }
+
+    public void changeRadioButtonFourName(String name) {
+        colorFourButton.setText(name);
+    }
+
+    public void changeRadioButtonFiveName(String name) {
+        colorFiveButton.setText(name);
+    }
+
+    public void changeRadioButtonSixName(String name) {
+        colorSixButton.setText(name);
+    }
+
+    public void changeRadioButtonSevenName(String name) {
+        colorSevenButton.setText(name);
+    }
+
+    public void changeRadioButtonEightName(String name) {
+        colorEightButton.setText(name);
+    }
+
+    public void setColorOne(Color colorOne) {
+        this.colorOne = colorOne;
+    }
+
+    public void setColorTwo(Color colorTwo) {
+        this.colorTwo = colorTwo;
+    }
+
+    public void setColorThree(Color colorThree) {
+        this.colorThree = colorThree;
+    }
+
+    public void setColorFour(Color colorFour) {
+        this.colorFour = colorFour;
+    }
+
+    public void setColorFive(Color colorFive) {
+        this.colorFive = colorFive;
+    }
+
+    public void setColorSix(Color colorSix) {
+        this.colorSix = colorSix;
+    }
+
+    public void setColorSeven(Color colorSeven) {
+        this.colorSeven = colorSeven;
+    }
+
+    public void setColorEight(Color colorEight) {
+        this.colorEight = colorEight;
+    }
+
+    public Color getColorOne() {
+        return colorOne;
+    }
+
+    public Color getColorTwo() {
+        return colorTwo;
+    }
+
+    public Color getColorThree() {
+        return colorThree;
+    }
+
+    public Color getColorFour() {
+        return colorFour;
+    }
+
+    public Color getColorFive() {
+        return colorFive;
+    }
+
+    public Color getColorSix() {
+        return colorSix;
+    }
+
+    public Color getColorSeven() {
+        return colorSeven;
+    }
+
+    public Color getColorEight() {
+        return colorEight;
+    }
 }

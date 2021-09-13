@@ -15,17 +15,12 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        Parent menuRoot = FXMLLoader.load(getClass().getResource("FXMLfiles/Menu.fxml"));
-        Parent encryptionRoot = FXMLLoader.load(getClass().getResource("FXMLfiles/Encrypt.fxml"));
-        Parent decryptionRoot = FXMLLoader.load(getClass().getResource("FXMLfiles/Decryption.fxml"));
-        Parent colorSelection = FXMLLoader.load(getClass().getResource("FXMLfiles/ColorSelector.fxml"));
-
         SceneLibrary.setPrimaryStage(primaryStage);
 
-        SceneLibrary.setMenuRoot(menuRoot);
-        SceneLibrary.setEncryptionRoot(encryptionRoot);
-        SceneLibrary.setDecryptionRoot(decryptionRoot);
-        SceneLibrary.setColorSelectorScene(colorSelection);
+        SceneLibrary.setMenuRoot("FXMLfiles/Menu.fxml");
+        SceneLibrary.setEncryptionRoot("FXMLfiles/Encrypt.fxml");
+        SceneLibrary.setDecryptionRoot("FXMLfiles/Decryption.fxml");
+        SceneLibrary.setColorSelectorScene("FXMLfiles/ColorSelector.fxml");
 
         SceneLibrary.playMenu();
         primaryStage.setHeight(500);
@@ -44,6 +39,14 @@ public class Main extends Application {
 
     public static int getWIDTH_TILES() {
         return WIDTH_TILES;
+    }
+
+    public static void setHeightTiles(int heightTiles) {
+        HEIGHT_TILES = heightTiles;
+    }
+
+    public static void setWidthTiles(int widthTiles) {
+        WIDTH_TILES = widthTiles;
     }
 
     public static void main(String[] args) {

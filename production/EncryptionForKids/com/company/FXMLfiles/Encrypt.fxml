@@ -31,7 +31,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </ImageView>
-                  <RadioButton fx:id="whiteButton" mnemonicParsing="false" onAction="#whiteClick" text="White">
+                  <RadioButton fx:id="colorFiveButton" mnemonicParsing="false" onAction="#whiteClick" text="White">
                      <HBox.margin>
                         <Insets bottom="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
@@ -44,7 +44,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </ImageView>
-                  <RadioButton fx:id="redButton" mnemonicParsing="false" onAction="#redClick" text="Red">
+                  <RadioButton fx:id="colorOneButton" mnemonicParsing="false" onAction="#redClick" text="Red">
                      <HBox.margin>
                         <Insets bottom="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
@@ -57,7 +57,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </ImageView>
-                  <RadioButton fx:id="blueButton" mnemonicParsing="false" onAction="#blueClick" text="Blue">
+                  <RadioButton fx:id="colorTwoButton" mnemonicParsing="false" onAction="#blueClick" text="Blue">
                      <HBox.margin>
                         <Insets bottom="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
@@ -70,7 +70,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </ImageView>
-                  <RadioButton fx:id="greenButton" mnemonicParsing="false" onAction="#greenClick" text="Green">
+                  <RadioButton fx:id="colorThreeButton" mnemonicParsing="false" onAction="#greenClick" text="Green">
                      <HBox.margin>
                         <Insets bottom="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
@@ -89,7 +89,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </ImageView>
-                  <RadioButton fx:id="yellowButton" mnemonicParsing="false" onAction="#yellowClick" text="Yellow">
+                  <RadioButton fx:id="colorFourButton" mnemonicParsing="false" onAction="#yellowClick" text="Yellow">
                      <HBox.margin>
                         <Insets bottom="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
@@ -102,7 +102,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </ImageView>
-                  <RadioButton fx:id="brownButton" mnemonicParsing="false" onAction="#brownClick" text="Brown">
+                  <RadioButton fx:id="colorSixButton" mnemonicParsing="false" onAction="#brownClick" text="Brown">
                      <HBox.margin>
                         <Insets bottom="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
@@ -115,7 +115,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </ImageView>
-                  <RadioButton fx:id="blackButton" mnemonicParsing="false" onAction="#blackClick" text="Black">
+                  <RadioButton fx:id="colorSevenButton" mnemonicParsing="false" onAction="#blackClick" text="Black">
                      <HBox.margin>
                         <Insets bottom="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
@@ -128,7 +128,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </ImageView>
-                  <RadioButton fx:id="indigoButton" mnemonicParsing="false" onAction="#indigoClick" text="Indigo">
+                  <RadioButton fx:id="colorEightButton" mnemonicParsing="false" onAction="#indigoClick" text="Indigo">
                      <HBox.margin>
                         <Insets bottom="10.0" right="10.0" top="10.0" />
                      </HBox.margin>

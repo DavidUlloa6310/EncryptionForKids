@@ -36,11 +36,11 @@ public class DecryptionController {
 
         gc = canvas.getGraphicsContext2D();
 
-        canvas.setHeight(Main.getHEIGHT_TILES() * Main.getTileSize());
-        canvas.setWidth(Main.getWIDTH_TILES() * Main.getTileSize());
+        canvas.setHeight(16 * Main.getTileSize());
+        canvas.setWidth(16 * Main.getTileSize());
 
         gc.setFill(Color.WHITE);
-        gc.fillRect(0, 0, Main.getWIDTH_TILES() * Main.getTileSize(), Main.getHEIGHT_TILES() * Main.getTileSize());
+        gc.fillRect(0, 0, 16 * Main.getTileSize(), 16 * Main.getTileSize());
 
         binarySelector.setItems(FXCollections.observableArrayList("2^2", "2^3"));
 
@@ -61,7 +61,12 @@ public class DecryptionController {
     public void decrypt() {
 
         gc.setFill(Color.WHITE);
-        gc.fillRect(0, 0, Main.getWIDTH_TILES() * Main.getTileSize(), Main.getHEIGHT_TILES() * Main.getTileSize());
+        gc.fillRect(0, 0, 16 * Main.getTileSize(), 16 * Main.getTileSize());
+
+        if (textArea.getText().equals("")) {
+            JOP.msg("Try inputting some text!");
+            return;
+        }
 
         String[] lines = textArea.getText().split("\\r?\\n");
 
@@ -106,30 +111,30 @@ public class DecryptionController {
         switch (num) {
             case "001":
             case "01":
-                gc.setFill(ColorChoices.getColorTwo());
+                gc.setFill(SceneLibrary.encryptController.getColorTwo());
                 break;
             case "010":
             case "10":
-                gc.setFill(ColorChoices.getColorThree());
+                gc.setFill(SceneLibrary.encryptController.getColorThree());
                 break;
             case "011":
             case "11":
-                gc.setFill(ColorChoices.getColorFour());
+                gc.setFill(SceneLibrary.encryptController.getColorFour());
                 break;
             case "100":
-                gc.setFill(ColorChoices.getColorFive());
+                gc.setFill(SceneLibrary.encryptController.getColorFive());
                 break;
             case "101":
-                gc.setFill(ColorChoices.getColorSix());
+                gc.setFill(SceneLibrary.encryptController.getColorSix());
                 break;
             case "110":
-                gc.setFill(ColorChoices.getColorSeven());
+                gc.setFill(SceneLibrary.encryptController.getColorSeven());
                 break;
             case "111":
-                gc.setFill(ColorChoices.getColorEight());
+                gc.setFill(SceneLibrary.encryptController.getColorEight());
                 break;
             default:
-                gc.setFill(ColorChoices.getColorOne());
+                gc.setFill(SceneLibrary.encryptController.getColorOne());
                 break;
         }
 
@@ -139,16 +144,16 @@ public class DecryptionController {
         public void paintCanvasPointTwoDigits(String num, int r, int c) {
             switch (num) {
                 case "01":
-                    gc.setFill(ColorChoices.getColorTwo());
+                    gc.setFill(SceneLibrary.encryptController.getColorTwo());
                     break;
                 case "10":
-                    gc.setFill(ColorChoices.getColorThree());
+                    gc.setFill(SceneLibrary.encryptController.getColorThree());
                     break;
                 case "11":
-                    gc.setFill(ColorChoices.getColorFour());
+                    gc.setFill(SceneLibrary.encryptController.getColorFour());
                     break;
                 default:
-                    gc.setFill(ColorChoices.getColorOne());
+                    gc.setFill(SceneLibrary.encryptController.getColorOne());
                     break;
             }
 
