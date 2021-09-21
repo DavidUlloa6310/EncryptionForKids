@@ -11,7 +11,7 @@
          <children>
             <Region HBox.hgrow="ALWAYS" />
             <Canvas fx:id="canvas" height="200.0" onMouseClicked="#clickCanvas" onMouseDragged="#onMouseDragged" width="200.0" HBox.hgrow="ALWAYS" />
-            <TextArea fx:id="textArea" HBox.hgrow="ALWAYS" />
+            <TextArea fx:id="textArea" prefHeight="388.0" prefWidth="468.0" HBox.hgrow="ALWAYS" />
             <Region HBox.hgrow="ALWAYS" />
          </children>
       </HBox>

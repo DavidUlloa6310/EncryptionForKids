@@ -68,14 +68,14 @@ public class DecryptionController {
             return;
         }
 
-        String[] lines = textArea.getText().split("\\r?\\n");
+        String[] lines = textArea.getText().split("   ");
 
         int squareRow = 0;
         int squareCol = 0;
 
         for (int r = 0; r < lines.length; r++) {
             String line = lines[r];
-            String[] nums = line.split(" ");
+            String[] nums = line.split("  ");
 
             for (int c = 0; c < nums.length; c++) {
                 String num = nums[c];
@@ -91,16 +91,16 @@ public class DecryptionController {
     public void paintSquare(String num, int startRow, int startCol) {
 
         if (binarySelector.getValue().equals("2^2")) {
-            paintCanvasPointTwoDigits(num.substring(0, 2), startRow, startCol);
-            paintCanvasPointTwoDigits(num.substring(2, 4), startRow, startCol + 1);
-            paintCanvasPointTwoDigits(num.substring(4, 6), startRow + 1, startCol + 1);
-            paintCanvasPointTwoDigits(num.substring(6), startRow + 1,  startCol);
+            paintCanvasPointTwoDigits(num.split(" ")[0], startRow, startCol);
+            paintCanvasPointTwoDigits(num.split(" ")[1], startRow, startCol + 1);
+            paintCanvasPointTwoDigits(num.split(" ")[2], startRow + 1, startCol + 1);
+            paintCanvasPointTwoDigits(num.split(" ")[3], startRow + 1,  startCol);
         } else {
             try {
-                paintCanvasPoint(num.substring(0, 3), startRow, startCol);
-                paintCanvasPoint(num.substring(3, 6), startRow, startCol + 1);
-                paintCanvasPoint(num.substring(6, 9), startRow + 1, startCol + 1);
-                paintCanvasPoint(num.substring(9), startRow + 1,  startCol);
+                paintCanvasPoint(num.split(" ")[0], startRow, startCol);
+                paintCanvasPoint(num.split(" ")[1], startRow, startCol + 1);
+                paintCanvasPoint(num.split(" ")[2], startRow + 1, startCol + 1);
+                paintCanvasPoint(num.split(" ")[3], startRow + 1,  startCol);
             } catch (Exception ignored){
 
             }

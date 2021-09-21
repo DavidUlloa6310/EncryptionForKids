@@ -34,24 +34,24 @@ public class PaintingArray {
             for (int c = 0; c < Main.getWIDTH_TILES(); c += 2) {
                 if (is2by2) {
                     encryption.append(array[r][c].substring(1));
-//                    encryption.append(" ");
+                    encryption.append(" ");
                     encryption.append(array[r][c + 1].substring(1));
-//                    encryption.append(" ");
+                    encryption.append(" ");
                     encryption.append(array[r + 1][c + 1].substring(1));
-//                    encryption.append(" ");
+                    encryption.append(" ");
                     encryption.append(array[r + 1][c].substring(1));
                 } else {
                     encryption.append(array[r][c]);
-//                    encryption.append(" ");
+                    encryption.append(" ");
                     encryption.append(array[r][c + 1]);
-//                    encryption.append(" ");
+                    encryption.append(" ");
                     encryption.append(array[r + 1][c + 1]);
-//                    encryption.append(" ");
+                    encryption.append(" ");
                     encryption.append(array[r + 1][c]);
                 }
-                encryption.append(" ");
+                encryption.append("  ");
             }
-            encryption.append("\n");
+            encryption.append(" ");
         }
         return encryption.toString();
     }
