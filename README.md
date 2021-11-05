@@ -13,7 +13,3 @@ Decryption
 </h2>
 Decyrption allows students to go from the text to the painting.
 <h2>
-Puzzles
-</h2>
-Puzzles are where students are challenged to solve encryptions! Students must either start from the text values and create the painting or go from the painting to the text
-value.
