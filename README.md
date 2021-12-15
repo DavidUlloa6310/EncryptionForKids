@@ -1,7 +1,7 @@
 # EncryptionForKids
 
 Encryption for kids is a program designed to teach kids about encryption.
-The Three modes include Encryption, Decrpytion, and Puzzles.
+The Three modes include Encryption, Decrpytion, and Color Selection.
 
 <h2>
 Encryption
@@ -13,3 +13,6 @@ Decryption
 </h2>
 Decyrption allows students to go from the text to the painting.
 <h2>
+Color Selection
+</h2>
+The color selection allows users to set what colors they can use in the painting process.
